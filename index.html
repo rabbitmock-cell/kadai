@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGO SCHOOL | 最短で技術と知識を身につける</title>
+    <!-- Google Fonts: Roboto & Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./common/css/style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <header class="l-header">
+        <a href="/" class="l-header__logo">LOGO</a>
+        
+        <nav class="l-header__nav" id="js-nav">
+            <ul class="l-header__nav-list">
+                <li><a href="#features" class="l-header__nav-link">私たちについて</a></li>
+                <li><a href="#flow" class="l-header__nav-link">受講までの流れ</a></li>
+                <li><a href="#method" class="l-header__nav-link">講座の視聴方法</a></li>
+                <li><a href="#results" class="l-header__nav-link">合格実績</a></li>
+                <li><a href="#faq" class="l-header__nav-link">よくある質問</a></li>
+            </ul>
+        </nav>
+
+        <button class="c-hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="js-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="p-hero">
+            <div class="p-hero__content">
+                <h1 class="p-hero__title">最短で、<br>技術と知識を<br>身につける。</h1>
+                <div class="p-hero__cta">
+                    <a href="#contact" class="c-button">
+                        資料請求はこちら
+                        <span class="c-button__icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="p-news" id="news">
+            <header class="c-section-header">
+                <h2 class="c-section-title" data-en="News & Event">ニュース & イベント</h2>
+            </header>
+            
+            <div class="p-news__grid">
+                <article class="p-news__item">
+                    <a href="#" class="p-news__link">
+                        <div class="p-news__item-thumb">
+                            <img src="./common/img/img_news_01.png" alt="" loading="lazy">
+                        </div>
+                        <div class="p-news__item-body">
+                            <h3 class="p-news__item-title">春休みのお知らせ</h3>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="p-news__item">
+                    <a href="#" class="p-news__link">
+                        <div class="p-news__item-thumb">
+                            <img src="./common/img/img_news_02.png" alt="" loading="lazy">
+                        </div>
+                        <div class="p-news__item-body">
+                            <h3 class="p-news__item-title">【募集終了】3月期の入学説明会のお知らせ。早期キャンペーンあり！</h3>
+                            <div class="p-news__meta">
+                                <dl class="p-news__meta-row">
+                                    <dt class="p-news__meta-label">開催日</dt>
+                                    <dd>2028年2月1日</dd>
+                                </dl>
+                                <dl class="p-news__meta-row">
+                                    <dt class="p-news__meta-label">場所</dt>
+                                    <dd>オンライン</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="p-news__item">
+                    <a href="#" class="p-news__link">
+                        <div class="p-news__item-thumb">
+                            <img src="./common/img/img_news_03.png" alt="" loading="lazy">
+                        </div>
+                        <div class="p-news__item-body">
+                            <h3 class="p-news__item-title">実務説明会！現場のプロが語る。現場の実情。</h3>
+                            <div class="p-news__meta">
+                                <dl class="p-news__meta-row">
+                                    <dt class="p-news__meta-label">開催日</dt>
+                                    <dd>2028年3月1日</dd>
+                                </dl>
+                                <dl class="p-news__meta-row">
+                                    <dt class="p-news__meta-label">場所</dt>
+                                    <dd>東京本社</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="p-news__item">
+                    <a href="#" class="p-news__link">
+                        <div class="p-news__item-thumb">
+                            <img src="./common/img/img_news_04.png" alt="" loading="lazy">
+                        </div>
+                        <div class="p-news__item-body">
+                            <h3 class="p-news__item-title">予約不要！入学相談会お気軽にお越しください。</h3>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="p-news__footer">
+                <a href="/events" class="c-button c-button--outline">
+                    イベント一覧へ
+                    <span class="c-button__icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="p-features" id="features">
+            <header class="c-section-header">
+                <h2 class="c-section-title" data-en="Features">サービスの特長</h2>
+            </header>
+            
+            <div class="p-features__grid">
+                <div class="p-features__card">
+                    <a href="#">
+                        <img src="./common/img/img_feature_01.png" alt="" class="p-features__card-bg" loading="lazy">
+                        <div class="p-features__card-overlay"></div>
+                        <p class="p-features__card-text">1講義、最大5分。<br>それでも身につく知識。</p>
+                        <div class="p-features__card-icon" aria-hidden="true"></div>
+                    </a>
+                </div>
+                <div class="p-features__card">
+                    <a href="#">
+                        <img src="./common/img/img_feature_02.png" alt="" class="p-features__card-bg" loading="lazy">
+                        <div class="p-features__card-overlay"></div>
+                        <p class="p-features__card-text">講師はすべて<br>プロ講師で、業界人。</p>
+                        <div class="p-features__card-icon" aria-hidden="true"></div>
+                    </a>
+                </div>
+                <div class="p-features__card">
+                    <a href="#">
+                        <img src="./common/img/img_feature_03.png" alt="" class="p-features__card-bg" loading="lazy">
+                        <div class="p-features__card-overlay"></div>
+                        <p class="p-features__card-text">本気で身につけるから、<br>課題は厳しめ。</p>
+                        <div class="p-features__card-icon" aria-hidden="true"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="p-cta" id="contact">
+            <img src="./common/img/sample_book.png" alt="教材サンプルブックのイメージ" class="p-cta__image" loading="lazy">
+            <div class="p-cta__content">
+                <h2 class="p-cta__title">SAMPLE BOOK</h2>
+                <p class="p-cta__subtitle">無料サンプルブック</p>
+                <p class="p-cta__description">詳しい資料・サンプルブックを<br>無料でお送りしています。</p>
+                <div class="p-cta__button">
+                    <a href="#" class="c-button">
+                        資料請求はこちら
+                        <span class="c-button__icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="l-footer">
+        <p>&copy; LOGO SCHOOL All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        /**
+         * モバイルメニューの制御
+         */
+        const hamburger = document.getElementById('js-hamburger');
+        const nav = document.getElementById('js-nav');
+        const navLinks = document.querySelectorAll('.l-header__nav-link');
+
+        const toggleMenu = () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('is-active');
+            // メニュー展開時はスクロールを防止
+            document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+        };
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        // リンククリック時、またはウィンドウリサイズ時にメニューを閉じる
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('is-active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && nav.classList.contains('is-active')) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html>
