@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGO SCHOOL | 最短で技術と知識を身につける</title>
+    <title>LOGO SCHOOL | 未経験からプロのWebデザイナーへ</title>
+    <meta name="description" content="LOGO SCHOOLは未経験からWebデザインを学びたい方を応援するスクールです。講座情報や無料サンプルブックをご紹介します。">
+    <meta property="og:title" content="LOGO SCHOOL | 未経験からプロのWebデザイナーへ">
+    <meta property="og:image" content="https://rabbitmock-cell.github.io/kadai/common/img/sample_book.png">
+    <meta property="og:url" content="https://rabbitmock-cell.github.io/kadai/">
+    <meta property="og:type" content="website">
     <!-- Google Fonts: Roboto & Noto Sans JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./common/css/style.css">
-    <style>
-        
-    </style>
 </head>
 <body>
 
     <header class="l-header">
-        <a href="/" class="l-header__logo">LOGO</a>
+        <a href="./" class="l-header__logo">LOGO</a>
         
         <nav class="l-header__nav" id="js-nav">
             <ul class="l-header__nav-list">
@@ -39,8 +41,24 @@
         <!-- Hero Section -->
         <section class="p-hero">
             <div class="p-hero__content">
-                <h1 class="p-hero__title">最短で、<br>技術と知識を<br>身につける。</h1>
+                <h1 class="p-hero__title"><span class="p-hero__accent">最短で</span>、<br>技術と知識を<br>身につける。</h1>
                 <div class="p-hero__cta">
+                    <a href="#contact" class="c-button">
+                        資料請求はこちら
+                        <span class="c-button__icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section (Hero直後) -->
+        <section class="p-cta">
+            <img src="./common/img/sample_book.png" alt="教材サンプルブックのイメージ" class="p-cta__image" loading="lazy">
+            <div class="p-cta__content">
+                <h2 class="p-cta__title">SAMPLE BOOK</h2>
+                <p class="p-cta__subtitle">無料サンプルブック</p>
+                <p class="p-cta__description">詳しい資料・サンプルブックを<br>無料でお送りしています。</p>
+                <div class="p-cta__button">
                     <a href="#contact" class="c-button">
                         資料請求はこちら
                         <span class="c-button__icon" aria-hidden="true"></span>
@@ -163,26 +181,98 @@
             </div>
         </section>
 
+
+        <!-- FAQ Section -->
+        <section class="p-faq" id="faq" aria-labelledby="faq-title">
+            <header class="c-section-header">
+                <h2 class="c-section-title" data-en="FAQ" id="faq-title">よくある質問</h2>
+            </header>
+            <div class="p-faq__list">
+                <div class="p-faq__item">
+                    <h3 class="p-faq__heading">
+                        <button type="button" class="p-faq__question" id="faq-question-1" aria-expanded="false" aria-controls="faq-answer-1">
+                            未経験でも受講できますか？<span class="p-faq__icon" aria-hidden="true">＋</span>
+                        </button>
+                    </h3>
+                    <div class="p-faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" hidden>
+                        <p>未経験の方にもわかりやすい学習内容を目指しています。詳しくは資料をご確認ください。</p>
+                    </div>
+                </div>
+                <div class="p-faq__item">
+                    <h3 class="p-faq__heading">
+                        <button type="button" class="p-faq__question" id="faq-question-2" aria-expanded="false" aria-controls="faq-answer-2">
+                            講座の視聴方法を教えてください。<span class="p-faq__icon" aria-hidden="true">＋</span>
+                        </button>
+                    </h3>
+                    <div class="p-faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden>
+                        <p>受講方法の詳細は、資料請求フォームからお気軽にお問い合わせください。</p>
+                    </div>
+                </div>
+                <div class="p-faq__item">
+                    <h3 class="p-faq__heading">
+                        <button type="button" class="p-faq__question" id="faq-question-3" aria-expanded="false" aria-controls="faq-answer-3">
+                            サンプルブックは無料ですか？<span class="p-faq__icon" aria-hidden="true">＋</span>
+                        </button>
+                    </h3>
+                    <div class="p-faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden>
+                        <p>サイトでは無料のサンプルブックをご案内しています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
-        <section class="p-cta" id="contact">
+        <section class="p-cta">
             <img src="./common/img/sample_book.png" alt="教材サンプルブックのイメージ" class="p-cta__image" loading="lazy">
             <div class="p-cta__content">
                 <h2 class="p-cta__title">SAMPLE BOOK</h2>
                 <p class="p-cta__subtitle">無料サンプルブック</p>
                 <p class="p-cta__description">詳しい資料・サンプルブックを<br>無料でお送りしています。</p>
                 <div class="p-cta__button">
-                    <a href="#" class="c-button">
+                    <a href="#contact" class="c-button">
                         資料請求はこちら
                         <span class="c-button__icon" aria-hidden="true"></span>
                     </a>
                 </div>
             </div>
         </section>
+
+        <!-- 資料請求フォーム（デモ：データの送信は行いません） -->
+        <section class="p-contact" id="contact" aria-labelledby="contact-title">
+            <header class="c-section-header">
+                <h2 class="c-section-title" data-en="CONTACT" id="contact-title">簡易資料請求フォーム</h2>
+            </header>
+            <p class="p-contact__lead">資料についてのご質問などを入力してください。</p>
+            <form class="p-contact__form" id="js-contact-form" novalidate>
+                <div class="p-contact__field">
+                    <label for="contact-name">お名前 <span class="p-contact__required">必須</span></label>
+                    <input id="contact-name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="p-contact__field">
+                    <label for="contact-email">メールアドレス <span class="p-contact__required">必須</span></label>
+                    <input id="contact-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="p-contact__field">
+                    <label for="contact-message">お問い合わせ内容</label>
+                    <textarea id="contact-message" name="message" rows="5"></textarea>
+                </div>
+                <div class="p-contact__submit">
+                    <button type="submit" class="c-button">
+                        送信する<span class="c-button__icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+        </section>
     </main>
 
     <footer class="l-footer">
+        <nav class="l-footer__links" aria-label="フッターリンク">
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">特定商取引法に基づく表記</a>
+        </nav>
         <p>&copy; LOGO SCHOOL All Rights Reserved.</p>
     </footer>
+    <button type="button" class="c-back-to-top" id="js-back-to-top" aria-label="ページの先頭へ戻る">TOP</button>
 
     <script>
         /**
