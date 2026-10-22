@@ -275,36 +275,87 @@
     <button type="button" class="c-back-to-top" id="js-back-to-top" aria-label="ページの先頭へ戻る">TOP</button>
 
     <script>
-        /**
-         * モバイルメニューの制御
-         */
         const hamburger = document.getElementById('js-hamburger');
         const nav = document.getElementById('js-nav');
         const navLinks = document.querySelectorAll('.l-header__nav-link');
 
-        const toggleMenu = () => {
-            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('is-active');
-            // メニュー展開時はスクロールを防止
-            document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
-        };
+        function closeMenu() {
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'メニューを開く');
+            nav.classList.remove('is-active');
+            document.body.style.overflow = '';
+        }
+        hamburger.addEventListener('click', () => {
+            if (hamburger.getAttribute('aria-expanded') === 'true') {
+                closeMenu();
+            } else {
+                hamburger.setAttribute('aria-expanded', 'true');
+                hamburger.setAttribute('aria-label', 'メニューを閉じる');
+                nav.classList.add('is-active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        navLinks.forEach(link => link.addEventListener('click', closeMenu));
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 920 && nav.classList.contains('is-active')) closeMenu();
+        });
 
-        hamburger.addEventListener('click', toggleMenu);
-
-        // リンククリック時、またはウィンドウリサイズ時にメニューを閉じる
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (nav.classList.contains('is-active')) {
-                    toggleMenu();
+        // アンカー移動（ヘッダー80pxと余白16pxを考慮）
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', event => {
+                const href = link.getAttribute('href');
+                if (href === '#') {
+                    event.preventDefault();
+                    return;
                 }
+                const target = document.getElementById(decodeURIComponent(href.slice(1)));
+                if (!target) return;
+                event.preventDefault();
+                const headerHeight = document.querySelector('.l-header').offsetHeight || 80;
+                const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - headerHeight - 16);
+                const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+                window.scrollTo({ top, behavior });
+                history.pushState(null, '', href);
             });
         });
 
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768 && nav.classList.contains('is-active')) {
-                toggleMenu();
+        // FAQアコーディオン
+        document.querySelectorAll('.p-faq__question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = document.getElementById(button.getAttribute('aria-controls'));
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', String(!expanded));
+                answer.hidden = expanded;
+            });
+        });
+
+        // 簡易フォーム：静的なデモのため実送信は行わない
+        document.getElementById('js-contact-form').addEventListener('submit', event => {
+            event.preventDefault();
+            const name = document.getElementById('contact-name');
+            const email = document.getElementById('contact-email');
+            if (!name.value.trim() || !email.value.trim()) {
+                alert('必須項目を入力してください');
+                (!name.value.trim() ? name : email).focus();
+                return;
             }
+            if (!email.validity.valid) {
+                alert('正しいメールアドレスを入力してください');
+                email.focus();
+                return;
+            }
+            alert('これはデモフォームです。実際の送信は行われません。');
+        });
+
+        const backToTop = document.getElementById('js-back-to-top');
+        function updateTopVisibility() {
+            backToTop.classList.toggle('is-visible', window.scrollY > 300);
+        }
+        window.addEventListener('scroll', updateTopVisibility, { passive: true });
+        updateTopVisibility();
+        backToTop.addEventListener('click', () => {
+            const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+            window.scrollTo({ top: 0, behavior });
         });
     </script>
 </body>
